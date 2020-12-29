@@ -25,6 +25,8 @@ src/SingleOperation.h
 C:/Users/sajmo/CLionProjects/untitled7/src/SingleOperation.h
 src/MultipleOperation.h
 C:/Users/sajmo/CLionProjects/untitled7/src/MultipleOperation.h
+src/SpecialMatrix.h
+C:/Users/sajmo/CLionProjects/untitled7/src/SpecialMatrix.h
 
 C:/Users/sajmo/CLionProjects/untitled7/src/GaussianElimination.h
 vector
@@ -40,15 +42,23 @@ C:/Users/sajmo/CLionProjects/untitled7/src/MultipleOperation.h
 Matrix.h
 C:/Users/sajmo/CLionProjects/untitled7/src/Matrix.h
 
-C:/Users/sajmo/CLionProjects/untitled7/src/SingleOperation.cpp
+C:/Users/sajmo/CLionProjects/untitled7/src/SingleOperation.h
+Matrix.h
+C:/Users/sajmo/CLionProjects/untitled7/src/Matrix.h
+
+C:/Users/sajmo/CLionProjects/untitled7/src/SpecialMatrix.cpp
+vector
+-
+iostream
+-
 cmath
 -
-SingleOperation.h
-C:/Users/sajmo/CLionProjects/untitled7/src/SingleOperation.h
-GaussianElimination.h
-C:/Users/sajmo/CLionProjects/untitled7/src/GaussianElimination.h
+SpecialMatrix.h
+C:/Users/sajmo/CLionProjects/untitled7/src/SpecialMatrix.h
+Matrix.h
+C:/Users/sajmo/CLionProjects/untitled7/src/Matrix.h
 
-C:/Users/sajmo/CLionProjects/untitled7/src/SingleOperation.h
+C:/Users/sajmo/CLionProjects/untitled7/src/SpecialMatrix.h
 Matrix.h
 C:/Users/sajmo/CLionProjects/untitled7/src/Matrix.h
 

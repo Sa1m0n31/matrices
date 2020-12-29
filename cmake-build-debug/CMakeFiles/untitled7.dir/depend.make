@@ -6,6 +6,7 @@ CMakeFiles/untitled7.dir/main.cpp.obj: ../src/GaussianElimination.h
 CMakeFiles/untitled7.dir/main.cpp.obj: ../src/Matrix.h
 CMakeFiles/untitled7.dir/main.cpp.obj: ../src/MultipleOperation.h
 CMakeFiles/untitled7.dir/main.cpp.obj: ../src/SingleOperation.h
+CMakeFiles/untitled7.dir/main.cpp.obj: ../src/SpecialMatrix.h
 
 CMakeFiles/untitled7.dir/src/GaussianElimination.cpp.obj: ../src/GaussianElimination.cpp
 CMakeFiles/untitled7.dir/src/GaussianElimination.cpp.obj: ../src/GaussianElimination.h
@@ -23,5 +24,7 @@ CMakeFiles/untitled7.dir/src/SingleOperation.cpp.obj: ../src/Matrix.h
 CMakeFiles/untitled7.dir/src/SingleOperation.cpp.obj: ../src/SingleOperation.cpp
 CMakeFiles/untitled7.dir/src/SingleOperation.cpp.obj: ../src/SingleOperation.h
 
+CMakeFiles/untitled7.dir/src/SpecialMatrix.cpp.obj: ../src/Matrix.h
 CMakeFiles/untitled7.dir/src/SpecialMatrix.cpp.obj: ../src/SpecialMatrix.cpp
+CMakeFiles/untitled7.dir/src/SpecialMatrix.cpp.obj: ../src/SpecialMatrix.h
 

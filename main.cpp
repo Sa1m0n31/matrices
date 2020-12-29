@@ -7,6 +7,7 @@
 #include "src/Matrix.h"
 #include "src/SingleOperation.h"
 #include "src/MultipleOperation.h"
+#include "src/SpecialMatrix.h"
 
 using namespace std;
 
@@ -56,11 +57,14 @@ int main() {
     Matrix *matrixC = new Matrix(4, 5, vec2);
     Matrix matrixD;
 
-    matrixA->printMatrix();
+    /*matrixA->printMatrix();
 
     singleOperation.setMatrix(*matrixA);
     singleOperation.getMatrix().printMatrix();
-    cout << singleOperation.determinant();
+    cout << singleOperation.determinant();*/
+
+    SpecialMatrix specialMatrix;
+    specialMatrix.getPermutationMatrix().printMatrix();
 
 
     /* Menu glowne */
