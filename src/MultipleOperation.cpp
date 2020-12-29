@@ -2,7 +2,7 @@
  * Klasa odpowiedzialna za operacje na dwoch lub wiecej macierzach - dodawanie, odejmowanie i mnozenie macierzy
  */
 
-#ifndef MULTIPLEOPERATION_CPP
+/* #ifndef MULTIPLEOPERATION_CPP
 #define MULTIPLEOPERATION_CPP
 
 #include<vector>
@@ -16,16 +16,16 @@ class MultipleOperation {
 public:
     Matrix A, B;
 
-    /* Error matrix */
+    /* Error matrix
     vector<double> row1 = {-9999.9999, -9999.9999};
     vector<double> row2 = {-9999.9999, -9999.9999};
     vector<vector<double> > matrixErr = {row1, row2};
     const Matrix *errorMatrix = new Matrix(2, 2, matrixErr);
 
-    /* GETTERY I SETTERY */
+    /* GETTERY I SETTERY
 
 public:
-    /* KONSTRUKTORY */
+    /* KONSTRUKTORY
     MultipleOperation() {
 
     }
@@ -51,9 +51,9 @@ public:
         B = b;
     }
 
-    /* METODY */
+    /* METODY
 public:
-    /* Dodawanie macierzy */
+    /* Dodawanie macierzy
     Matrix addMatrices() {
         int rowsA = A.getRows(), colsA = A.getCols(), rowsB = B.getRows(), colsB = B.getCols();
         int i, j;
@@ -78,7 +78,7 @@ public:
         return *result;
     }
 
-    /* Odejmowanie macierzy */
+    /* Odejmowanie macierzy
     Matrix subtractMatrices() {
         int rowsA = A.getRows(), colsA = A.getCols(), rowsB = B.getRows(), colsB = B.getCols();
         int i, j;
@@ -103,7 +103,7 @@ public:
         return *result;
     }
 
-    /* Mnozenie macierzy */
+    /* Mnozenie macierzy
     Matrix multiplyMatrices() {
         int rowsA = A.getRows(), colsA = A.getCols(), rowsB = B.getRows(), colsB = B.getCols();
         int i, j, k;
@@ -136,4 +136,4 @@ public:
     }
 };
 
-#endif
+#endif */

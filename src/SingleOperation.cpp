@@ -1,15 +1,8 @@
-#ifndef SINGLEOPERATION_CPP
+/* #ifndef SINGLEOPERATION_CPP
 #define SINGLEOPERATION_CPP
 
 #include "./Matrix.cpp"
 #include<cmath>
-
-#ifndef GAUSSIANELIMINATION_CPP
-#define GAUSSIANELIMINATION_CPP
-
-#include "./GaussianElimination.cpp"
-
-#endif
 
 using namespace std;
 
@@ -17,7 +10,7 @@ class SingleOperation {
 private:
     Matrix matrix;
 
-    /* Error matrix */
+    /* Error matrix
     vector<double> row1 = {-9999.9999, -9999.9999};
     vector<double> row2 = {-9999.9999, -9999.9999};
     vector<vector<double> > matrixErr = {row1, row2};
@@ -33,7 +26,7 @@ public:
     }
 
 public:
-    /* Transponowanie macierzy */
+    /* Transponowanie macierzy
     Matrix transpose() {
         Matrix result;
         vector<vector<double> > newMatrix;
@@ -54,12 +47,12 @@ public:
         return result;
     }
 
-    /* Wyliczanie macierzy odwrotnej */
+    /* Wyliczanie macierzy odwrotnej
     Matrix inverse(Matrix m) {
         return m;
     }
 
-    /* Zwracanie macierzy z wykreslonym wierszem i kolumna */
+    /* Zwracanie macierzy z wykreslonym wierszem i kolumna
     static Matrix getMatrixForLaplaceTransform(Matrix m, int rowToDelete, int columnToDelete) {
         int i, j;
         rowToDelete--;
@@ -87,13 +80,13 @@ public:
         return resultMatrix;
     }
 
-    /* Wyliczanie wyznacznika */
-    /* Rozwiniecie Laplace'a wzgledem pierwszej kolumny */
+    /* Wyliczanie wyznacznika
+    /* Rozwiniecie Laplace'a wzgledem pierwszej kolumny
     double determinant() {
         if(isSquare(matrix)) {
             int i;
             double det = 1;
-            GaussianElimination gaussianElimination;
+            /* GaussianElimination gaussianElimination;
             gaussianElimination.setMatrix(matrix);
 
             Matrix upperTriangular = gaussianElimination.upperTriangular();
@@ -121,14 +114,14 @@ public:
                 }
 
                 return res;
-            } */
+            }
         }
         else {
             return -9999.9999;
         }
     }
 
-    /* Wyliczanie sladu */
+    /* Wyliczanie sladu
     double trace(Matrix m) {
         if(isSquare(m)) {
             int i, res = 0;
@@ -140,15 +133,15 @@ public:
         else return 0;
     }
 
-    /* Wyznaczanie podmacierzy */
-    /* Zwraca macierz od wiersza rowsStart do wiersza rowsEnd-1 oraz od kolumny colsStart do kolumny colsEnd-1 */
+    /* Wyznaczanie podmacierzy
+    /* Zwraca macierz od wiersza rowsStart do wiersza rowsEnd-1 oraz od kolumny colsStart do kolumny colsEnd-1
     Matrix getSubmatrix(Matrix m, int rowsStart, int rowsEnd, int colsStart, int colsEnd) {
         Matrix resultMatrix;
         vector<vector<double> > newMatrix;
         vector<double> newRow;
         int i, j;
 
-        /* Obsluga bledow */
+        /* Obsluga bledow
         if((rowsStart <= rowsEnd)||(colsStart <= colsEnd)) {
             return *errorMatrix;
         }
@@ -172,10 +165,10 @@ public:
         return resultMatrix;
     }
 
-    /* Sprawdzanie czy macierz jest kwadratowa */
+    /* Sprawdzanie czy macierz jest kwadratowa
     static bool isSquare(Matrix m) {
         return m.getCols() == m.getRows();
     }
 };
 
-#endif
+#endif */

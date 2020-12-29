@@ -1,0 +1,8 @@
+//
+// Created by sajmo on 29.12.2020.
+//
+
+#ifndef UNTITLED7_SINGLEOPERATION_H
+#define UNTITLED7_SINGLEOPERATION_H
+
+#endif //UNTITLED7_SINGLEOPERATION_H

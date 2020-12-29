@@ -1,83 +1,73 @@
-#ifndef MATRIX_CPP
-#define MATRIX_CPP
-
 #include<iostream>
 #include<vector>
 #include<iomanip>
 
+#include "Matrix.h"
+
 using namespace std;
 
-class Matrix {
-    /* ZMIENNE */
-private:
-    int rows;
-    int cols;
-    vector<vector<double> > matrix;
+Matrix::Matrix() {
 
-public:
-    /* KONSTRUKTORY */
-    Matrix() {
+}
 
-    }
+Matrix::Matrix(int rows, int cols, vector<vector<double> > matrix) {
+    this->rows = rows;
+    this->cols = cols;
+    this->matrix = matrix;
+}
 
-    Matrix(int rows, int cols, vector<vector<double> > matrix = {{1, 1}, {1, 1}}) {
-        this->rows = rows;
-        this->cols = cols;
-        this->matrix = matrix;
-    }
+/* Getters and setters */
+int Matrix::getRows() {
+    return rows;
+}
 
-    /* Getters and setters */
-    int getRows() {
-        return rows;
-    }
+void Matrix::setRows(int rows) {
+    Matrix::rows = rows;
+}
 
-    void setRows(int rows) {
-        Matrix::rows = rows;
-    }
+int Matrix::getCols() const {
+    return cols;
+}
 
-    int getCols() const {
-        return cols;
-    }
+void Matrix::setCols(int cols) {
+    Matrix::cols = cols;
+}
 
-    void setCols(int cols) {
-        Matrix::cols = cols;
-    }
+const vector<vector<double> > Matrix::getMatrix() const {
+    return matrix;
+}
 
-    const vector<vector<double>> &getMatrix() const {
-        return matrix;
-    }
+void Matrix::setMatrix(const vector<vector<double> > &matrix) {
+    Matrix::matrix = matrix;
+}
 
-    void setMatrix(const vector<vector<double>> &matrix) {
-        Matrix::matrix = matrix;
-    }
+/* METODY */
 
-    /* METODY */
+/* Wczytywanie macierzy */
+void Matrix::loadMatrix() {
+    int i, j;
+    double number;
+    vector<double> row;
 
-    /* Wczytywanie macierzy */
-    void loadMatrix() {
-        int i, j;
-        double number;
-        vector<double> row;
+    cout << "Liczba wierszy: ";
+    cin >> rows;
+    cout << "Liczba kolumn: ";
+    cin >> cols;
 
-        cout << "Liczba wierszy: ";
-        cin >> rows;
-        cout << "Liczba kolumn: ";
-        cin >> cols;
-
-        for(i=0; i<rows; i++) {
-            cout << "Wczytaj wiersz " << i+1 << ": ";
-            for(j=0; j<cols; j++) {
-                cin >> number;
-                row.push_back(number);
-            }
-            matrix.push_back(row);
-            row.clear();
+    for(i=0; i<rows; i++) {
+        cout << "Wczytaj wiersz " << i+1 << ": ";
+        for(j=0; j<cols; j++) {
+            cin >> number;
+            row.push_back(number);
         }
-        cout << "Macierz zostala wczytana" << endl;
+        matrix.push_back(row);
+        row.clear();
     }
+    cout << "Macierz zostala wczytana" << endl;
+}
 
-    /* Wypisywanie macierzy na ekran */
-    void printMatrix() {
+/* Wypisywanie macierzy na ekran */
+void Matrix::printMatrix() {
         int i, j;
         int printedMatrixRows = matrix.size();
         int printedMatrixCols = matrix[0].size();
@@ -87,7 +77,4 @@ public:
             }
             cout << endl;
         }
-    }
-};
-
-#endif
+}

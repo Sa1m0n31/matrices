@@ -86,16 +86,31 @@
 		<Unit filename="C:/Users/sajmo/CLionProjects/untitled7/src/GaussianElimination.cpp">
 			<Option target="untitled7"/>
 		</Unit>
+		<Unit filename="C:/Users/sajmo/CLionProjects/untitled7/src/GaussianElimination.h">
+			<Option target="untitled7"/>
+		</Unit>
 		<Unit filename="C:/Users/sajmo/CLionProjects/untitled7/src/Matrix.cpp">
+			<Option target="untitled7"/>
+		</Unit>
+		<Unit filename="C:/Users/sajmo/CLionProjects/untitled7/src/Matrix.h">
 			<Option target="untitled7"/>
 		</Unit>
 		<Unit filename="C:/Users/sajmo/CLionProjects/untitled7/src/MultipleOperation.cpp">
 			<Option target="untitled7"/>
 		</Unit>
+		<Unit filename="C:/Users/sajmo/CLionProjects/untitled7/src/MultipleOperation.h">
+			<Option target="untitled7"/>
+		</Unit>
 		<Unit filename="C:/Users/sajmo/CLionProjects/untitled7/src/SingleOperation.cpp">
 			<Option target="untitled7"/>
 		</Unit>
+		<Unit filename="C:/Users/sajmo/CLionProjects/untitled7/src/SingleOperation.h">
+			<Option target="untitled7"/>
+		</Unit>
 		<Unit filename="C:/Users/sajmo/CLionProjects/untitled7/src/SpecialMatrix.cpp">
+			<Option target="untitled7"/>
+		</Unit>
+		<Unit filename="C:/Users/sajmo/CLionProjects/untitled7/src/SpecialMatrix.h">
 			<Option target="untitled7"/>
 		</Unit>
 		<Unit filename="C:/Users/sajmo/CLionProjects/untitled7/CMakeLists.txt">

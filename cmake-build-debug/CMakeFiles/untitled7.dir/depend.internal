@@ -3,22 +3,22 @@
 
 CMakeFiles/untitled7.dir/main.cpp.obj
  C:/Users/sajmo/CLionProjects/untitled7/main.cpp
- C:/Users/sajmo/CLionProjects/untitled7/src/GaussianElimination.cpp
- C:/Users/sajmo/CLionProjects/untitled7/src/Matrix.cpp
- C:/Users/sajmo/CLionProjects/untitled7/src/MultipleOperation.cpp
- C:/Users/sajmo/CLionProjects/untitled7/src/SingleOperation.cpp
- C:/Users/sajmo/CLionProjects/untitled7/src/SpecialMatrix.cpp
+ C:/Users/sajmo/CLionProjects/untitled7/src/GaussianElimination.h
+ C:/Users/sajmo/CLionProjects/untitled7/src/Matrix.h
 CMakeFiles/untitled7.dir/src/GaussianElimination.cpp.obj
  C:/Users/sajmo/CLionProjects/untitled7/src/GaussianElimination.cpp
- C:/Users/sajmo/CLionProjects/untitled7/src/Matrix.cpp
+ C:/Users/sajmo/CLionProjects/untitled7/src/GaussianElimination.h
+ C:/Users/sajmo/CLionProjects/untitled7/src/Matrix.h
 CMakeFiles/untitled7.dir/src/Matrix.cpp.obj
  C:/Users/sajmo/CLionProjects/untitled7/src/Matrix.cpp
+ C:/Users/sajmo/CLionProjects/untitled7/src/Matrix.h
 CMakeFiles/untitled7.dir/src/MultipleOperation.cpp.obj
  C:/Users/sajmo/CLionProjects/untitled7/src/Matrix.cpp
+ C:/Users/sajmo/CLionProjects/untitled7/src/Matrix.h
  C:/Users/sajmo/CLionProjects/untitled7/src/MultipleOperation.cpp
 CMakeFiles/untitled7.dir/src/SingleOperation.cpp.obj
- C:/Users/sajmo/CLionProjects/untitled7/src/GaussianElimination.cpp
  C:/Users/sajmo/CLionProjects/untitled7/src/Matrix.cpp
+ C:/Users/sajmo/CLionProjects/untitled7/src/Matrix.h
  C:/Users/sajmo/CLionProjects/untitled7/src/SingleOperation.cpp
 CMakeFiles/untitled7.dir/src/SpecialMatrix.cpp.obj
  C:/Users/sajmo/CLionProjects/untitled7/src/SpecialMatrix.cpp
