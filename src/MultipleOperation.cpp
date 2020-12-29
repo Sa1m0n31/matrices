@@ -16,6 +16,7 @@ class MultipleOperation {
 public:
     Matrix A, B;
 
+    /* Error matrix */
     vector<double> row1 = {-9999.9999, -9999.9999};
     vector<double> row2 = {-9999.9999, -9999.9999};
     vector<vector<double> > matrixErr = {row1, row2};

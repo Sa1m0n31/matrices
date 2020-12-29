@@ -14,6 +14,12 @@ class GaussianElimination {
 private:
     Matrix matrix;
 
+    /* Error matrix */
+    vector<double> row1 = {-9999.9999, -9999.9999};
+    vector<double> row2 = {-9999.9999, -9999.9999};
+    vector<vector<double> > matrixErr = {row1, row2};
+    const Matrix *errorMatrix = new Matrix(2, 2, matrixErr);
+
 public:
     const Matrix &getMatrix() const {
         return matrix;
@@ -81,6 +87,36 @@ public:
 
         return resultMatrix;
     }
+
+    /* Upper triangular */
+    /* Eliminacja Gaussa - dziala jesli zaden z elementow na przekatnej nie jest ani nie bedzie 0 */
+    Matrix upperTriangular() {
+        Matrix upperTriangularMatrix;
+        vector<vector<double> > copyMatrix = matrix.getMatrix();
+        int i, j, l, k = 1;
+        double divideBy, mnoznik;
+        Matrix errorMatrix;
+
+        for(i=0; i<matrix.getRows(); i++) {
+            divideBy = copyMatrix[i][i];
+            if(divideBy == 0) return errorMatrix;
+
+            for(j=k; j<matrix.getRows(); j++) {
+                    mnoznik = -copyMatrix[j][i] / divideBy;
+                    for(l=0; l<matrix.getCols(); l++) {
+                        copyMatrix[j][l] += copyMatrix[i][l] * mnoznik;
+                    }
+            }
+            k++;
+        }
+
+        upperTriangularMatrix.setRows(copyMatrix.size());
+        upperTriangularMatrix.setCols(copyMatrix[0].size());
+        upperTriangularMatrix.setMatrix(copyMatrix);
+        return upperTriangularMatrix;
+    }
+
+
 };
 
 #endif

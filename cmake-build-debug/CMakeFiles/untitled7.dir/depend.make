@@ -16,6 +16,7 @@ CMakeFiles/untitled7.dir/src/Matrix.cpp.obj: ../src/Matrix.cpp
 CMakeFiles/untitled7.dir/src/MultipleOperation.cpp.obj: ../src/Matrix.cpp
 CMakeFiles/untitled7.dir/src/MultipleOperation.cpp.obj: ../src/MultipleOperation.cpp
 
+CMakeFiles/untitled7.dir/src/SingleOperation.cpp.obj: ../src/GaussianElimination.cpp
 CMakeFiles/untitled7.dir/src/SingleOperation.cpp.obj: ../src/Matrix.cpp
 CMakeFiles/untitled7.dir/src/SingleOperation.cpp.obj: ../src/SingleOperation.cpp
 

@@ -17,47 +17,52 @@ int main() {
     vector<vector<double> > vec;
     vec.push_back(row);
     vec.push_back(row);
-    vec[0].push_back(1);
     vec[0].push_back(2);
-    vec[1].push_back(3);
-    vec[1].push_back(4);
+    vec[0].push_back(4);
+    vec[1].push_back(6);
+    vec[1].push_back(8);
 
     vector<vector<double> > vec2;
     vec2.push_back(row);
     vec2.push_back(row);
-    vec2[0].push_back(1);
-    vec2[0].push_back(2);
-    vec2[0].push_back(3);
+    vec2.push_back(row);
+    vec2.push_back(row);
+    vec2[0].push_back(4);
+    vec2[0].push_back(-2);
+    vec2[0].push_back(4);
+    vec2[0].push_back(-2);
+    vec2[0].push_back(8);
+    vec2[1].push_back(3);
+    vec2[1].push_back(1);
     vec2[1].push_back(4);
-    vec2[1].push_back(5);
-    vec2[1].push_back(6);
+    vec2[1].push_back(2);
+    vec2[1].push_back(7);
+    vec2[2].push_back(2);
+    vec2[2].push_back(4);
+    vec2[2].push_back(2);
+    vec2[2].push_back(1);
+    vec2[2].push_back(10);
+    vec2[3].push_back(2);
+    vec2[3].push_back(-2);
+    vec2[3].push_back(4);
+    vec2[3].push_back(2);
+    vec2[3].push_back(2);
 
     GaussianElimination gaussianElimination;
     MultipleOperation operation;
     SingleOperation singleOperation;
     Matrix *matrixA = new Matrix(2, 2, vec);
     Matrix *matrixB = new Matrix(2, 2, vec);
-    Matrix *matrixC = new Matrix(2, 3, vec2);
+    Matrix *matrixC = new Matrix(4, 5, vec2);
     Matrix matrixD;
 
-    gaussianElimination.setMatrix(*matrixA);
     //*matrixA = gaussianElimination.switchRows(1, 2);
     //*matrixA = gaussianElimination.multiplyRow(2, 5);
     //*matrixA = gaussianElimination.addOneRowToAnother(1, 2);
 
-    operation.setA(*matrixB);
-    operation.setB(*matrixC);
+    singleOperation.setMatrix(*matrixA);
+    cout << singleOperation.determinant();
 
-    matrixB->printMatrix();
-    matrixC->printMatrix();
-
-    matrixD = operation.multiplyMatrices();
-
-    matrixD.printMatrix();
-
-    singleOperation.setMatrix(matrixD);
-    matrixD = singleOperation.transpose();
-    matrixD.printMatrix();
 
     /* Menu glowne */
     /*
