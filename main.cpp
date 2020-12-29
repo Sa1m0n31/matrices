@@ -5,6 +5,8 @@
 #include<cmath>
 #include "src/GaussianElimination.h"
 #include "src/Matrix.h"
+#include "src/SingleOperation.h"
+#include "src/MultipleOperation.h"
 
 using namespace std;
 
@@ -47,8 +49,8 @@ int main() {
     vec2[3].push_back(2);
 
     GaussianElimination gaussianElimination;
-    /* MultipleOperation operation;
-    SingleOperation singleOperation; */
+    MultipleOperation operation;
+    SingleOperation singleOperation;
     Matrix *matrixA = new Matrix(2, 2, vec);
     Matrix *matrixB = new Matrix(2, 2, vec);
     Matrix *matrixC = new Matrix(4, 5, vec2);
@@ -56,9 +58,9 @@ int main() {
 
     matrixA->printMatrix();
 
-    //*matrixA = gaussianElimination.switchRows(1, 2);
-    //*matrixA = gaussianElimination.multiplyRow(2, 5);
-    //*matrixA = gaussianElimination.addOneRowToAnother(1, 2);
+    singleOperation.setMatrix(*matrixA);
+    singleOperation.getMatrix().printMatrix();
+    cout << singleOperation.determinant();
 
 
     /* Menu glowne */
