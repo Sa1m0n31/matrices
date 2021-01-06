@@ -104,7 +104,9 @@ Matrix SpecialMatrix::getToeplitzMatrix() {
 
 /* Macierz permutacji */
 Matrix SpecialMatrix::getPermutationMatrix() {
+    bool err;
     int i, j, n, pos;
+    Matrix *errorMatrix = new Matrix(0);
     cout << "Liczba wierszy i kolumn: ";
     cin >> n;
 
@@ -124,7 +126,8 @@ Matrix SpecialMatrix::getPermutationMatrix() {
     for(i=0; i<n; i++) {
         cout << "Pozycja jedynki w " << i+1 << ". wierszu: ";
         cin >> pos;
-        newMatrix[i][pos-1] = 1;
+        if(pos <= n) newMatrix[i][pos-1] = 1;
+        else return *errorMatrix;
     }
 
     resultMatrix.setRows(n);

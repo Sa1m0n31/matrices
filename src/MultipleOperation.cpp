@@ -3,7 +3,6 @@
  */
 
 #include<vector>
-#include<iostream>
 
 #include "MultipleOperation.h"
 #include "Matrix.h"
@@ -42,9 +41,10 @@ Matrix MultipleOperation::addMatrices() {
     Matrix *result;
     vector<vector<double> > resultMatrix;
     vector<double> resultRow;
+    Matrix *errorMatrix = new Matrix(0);
+
 
     if((rowsA != rowsB)||(colsA != colsB)) {
-        cout << "Blad: Dodawac mozna tylko macierze o tych samych wymiarach" << endl;
         return *errorMatrix;
     }
 
@@ -67,9 +67,9 @@ Matrix MultipleOperation::subtractMatrices() {
     Matrix *result;
     vector<vector<double> > resultMatrix;
     vector<double> resultRow;
+    Matrix *errorMatrix = new Matrix(0);
 
     if((rowsA != rowsB)||(colsA != colsB)) {
-        cout << "Blad: Odejmowac mozna tylko macierze o tych samych wymiarach" << endl;
         return *errorMatrix;
     }
 
@@ -93,9 +93,9 @@ Matrix MultipleOperation::multiplyMatrices() {
     vector<vector<double> > resultMatrix;
     vector<double> resultRow;
     double single;
+    Matrix *errorMatrix = new Matrix(0);
 
     if(colsA != rowsB) {
-        cout << "Blad: Mnozenie macierzy dozwolone tylko gdy row(a) = col(b)" << endl;
         return *errorMatrix;
     }
 

@@ -19,7 +19,7 @@ GaussianElimination::GaussianElimination(Matrix matrix) {
     this->errorMatrix = new Matrix(2, 2, matrixErr);
 }
 
-const Matrix GaussianElimination::getMatrix() {
+Matrix GaussianElimination::getMatrix() {
     return matrix;
 }
 
@@ -97,7 +97,10 @@ Matrix GaussianElimination::upperTriangular() {
 
     for(i=0; i<matrix.getRows(); i++) {
         divideBy = copyMatrix[i][i];
-        if(divideBy == 0) return errorMatrix;
+        if(divideBy == 0) {
+            cout << "ERRROR MATRIX";
+            return errorMatrix;
+        }
 
         for(j=k; j<matrix.getRows(); j++) {
             mnoznik = -copyMatrix[j][i] / divideBy;
@@ -113,3 +116,77 @@ Matrix GaussianElimination::upperTriangular() {
     upperTriangularMatrix.setMatrix(copyMatrix);
     return upperTriangularMatrix;
 }
+
+/* Jedynki w pierwszych kolumnach */
+Matrix GaussianElimination::reducedEchelon(Matrix matrix) {
+    Matrix resultMatrix;
+    int i, j, k = 0;
+    double mnoznik;
+    vector<vector<double> > newMatrix;
+    vector<double> newRow;
+
+    /* Inicjalizacja */
+    for(i=0; i<matrix.getRows(); i++) {
+        newMatrix.push_back(newRow);
+        for(j=0; j<matrix.getCols(); j++) {
+            newMatrix[i].push_back(matrix.getMatrix()[i][j]);
+        }
+    }
+
+    /* Pierwszy niezerowy wyraz w wierszu - jedynka */
+    for(i=0; i<matrix.getRows(); i++) {
+        mnoznik = 1 / matrix.getMatrix()[i][k];
+        for(j=0; j<matrix.getCols(); j++) {
+            newMatrix[i][j] *= mnoznik;
+            if(newMatrix[i][j] == -0) newMatrix[i][j] = 0;
+        }
+        k++;
+    }
+
+    resultMatrix.setRows(matrix.getRows());
+    resultMatrix.setCols(matrix.getCols());
+    resultMatrix.setMatrix(newMatrix);
+
+    return resultMatrix;
+}
+
+Matrix GaussianElimination::fullReducedEchelon(Matrix matrix) {
+    Matrix resultMatrix;
+    int i, j, k = 0;
+    double mnoznik;
+    vector<vector<double> > newMatrix;
+    vector<double> newRow;
+
+    /* Inicjalizacja */
+    for(i=0; i<matrix.getRows(); i++) {
+        newMatrix.push_back(newRow);
+        for(j=0; j<matrix.getCols(); j++) {
+            newMatrix[i].push_back(matrix.getMatrix()[i][j]);
+        }
+    }
+
+    /* Redukcja */
+    for(i=matrix.getRows()-1; i>0; i--) {
+        /* Mnozymy kolumne i-ta i ostatnia kolumne kazdego wiersza powyzej */
+        for(j=i-1; j>=0; j--) {
+            mnoznik = -newMatrix[j][i];
+            /*cout << "Mnoznik = " << mnoznik << endl;
+            cout << "Dodajemy do " << newMatrix[j][i] << " to: " << newMatrix[i][i] * mnoznik << endl;
+            cout << "Dodajemy do " << newMatrix[j][matrix.getCols()-1] << " to: " << newMatrix[i][matrix.getCols()-1] * mnoznik << endl;
+            */
+            newMatrix[j][i] += newMatrix[i][i] * mnoznik;
+            newMatrix[j][matrix.getCols()-1] += newMatrix[i][matrix.getCols()-1] * mnoznik;
+        }
+    }
+
+    resultMatrix.setMatrix(newMatrix);
+    resultMatrix.setRows(matrix.getRows());
+    resultMatrix.setCols(matrix.getCols());
+
+    return resultMatrix;
+}
+
+Matrix GaussianElimination::resolveSystemOfLinearEquations() {
+    return fullReducedEchelon(reducedEchelon(this->upperTriangular()));
+}
+

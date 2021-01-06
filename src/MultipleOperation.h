@@ -8,10 +8,6 @@ using namespace std;
 class MultipleOperation {
 private:
     Matrix A, B;
-    vector<double> row1;
-    vector<double> row2;
-    vector<vector<double> > matrixErr;
-    const Matrix *errorMatrix;
 public:
     MultipleOperation();
     MultipleOperation(Matrix A, Matrix B);

@@ -6,17 +6,25 @@
 
 using namespace std;
 
+/* Konstruktor bez argumentow */
 Matrix::Matrix() {
 
 }
 
+/* Konstruktor z dwoma argumentami - przydatny to tworzenia macierzy oznaczajacej blad */
+Matrix::Matrix(int rows, int cols) {
+    this->rows = rows;
+    this->cols = cols;
+}
+
+/* Konstruktor z trzema argumentami */
 Matrix::Matrix(int rows, int cols, vector<vector<double> > matrix) {
     this->rows = rows;
     this->cols = cols;
     this->matrix = matrix;
 }
 
-/* Getters and setters */
+/* Gettery i settery */
 int Matrix::getRows() {
     return rows;
 }
@@ -41,8 +49,6 @@ void Matrix::setMatrix(const vector<vector<double> > &matrix) {
     Matrix::matrix = matrix;
 }
 
-/* METODY */
-
 /* Wczytywanie macierzy */
 void Matrix::loadMatrix() {
     int i, j;
@@ -66,6 +72,52 @@ void Matrix::loadMatrix() {
     cout << "Macierz zostala wczytana" << endl;
 }
 
+/* Wczytywanie macierzy kwadratowej */
+void Matrix::loadSquareMatrix() {
+    int i, j;
+    double number;
+    vector<double> row;
+
+    cout << "Liczba wierszy i kolumn: ";
+    cin >> rows;
+
+    this->setCols(this->getRows());
+
+    for(i=0; i<rows; i++) {
+        cout << "Wczytaj wiersz " << i+1 << ": ";
+        for(j=0; j<cols; j++) {
+            cin >> number;
+            row.push_back(number);
+        }
+        matrix.push_back(row);
+        row.clear();
+    }
+    cout << "Macierz zostala wczytana" << endl;
+}
+
+/* Wczytywanie macierzy rozszerzonej ukladu rownan liniowych (o n wierszach i n+1 kolumnach) */
+void Matrix::loadGaussianEliminationMatrix() {
+    int i, j;
+    double number;
+    vector<double> row;
+
+    cout << "Liczba niewiadomych: ";
+    cin >> rows;
+
+    this->setCols(this->getRows() + 1);
+
+    for(i=0; i<rows; i++) {
+        cout << "Wczytaj " << i+1 << ". rownanie (" << rows << ". wspolczynnikow i jeden wyraz wolny): ";
+        for(j=0; j<cols; j++) {
+            cin >> number;
+            row.push_back(number);
+        }
+        matrix.push_back(row);
+        row.clear();
+    }
+    cout << "Macierz rozszerzona ukladu rownan liniowych zostala wczytana" << endl;
+}
+
 /* Wypisywanie macierzy na ekran */
 void Matrix::printMatrix() {
         int i, j;
@@ -73,7 +125,7 @@ void Matrix::printMatrix() {
         int printedMatrixCols = matrix[0].size();
         for(i=0; i<printedMatrixRows; i++) {
             for(j=0; j<printedMatrixCols; j++) {
-                cout << setw(10) << matrix[i][j];
+                cout << setw(10) << fixed << setprecision(4) << matrix[i][j];
             }
             cout << endl;
         }

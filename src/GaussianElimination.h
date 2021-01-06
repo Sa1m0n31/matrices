@@ -21,12 +21,15 @@ private:
 public:
     GaussianElimination();
     GaussianElimination(Matrix matrix);
-    const Matrix getMatrix();
+    Matrix getMatrix();
     void setMatrix(const Matrix &matrix);
     Matrix switchRows(int a, int b);
     Matrix multiplyRow(int row, double number);
     Matrix addOneRowToAnother(int a, int b);
     Matrix upperTriangular();
+    static Matrix reducedEchelon(Matrix matrix);
+    static Matrix fullReducedEchelon(Matrix matrix);
+    Matrix resolveSystemOfLinearEquations();
 };
 
 #endif //UNTITLED7_GAUSSIANELIMINATION_H

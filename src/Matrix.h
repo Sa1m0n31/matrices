@@ -14,6 +14,7 @@ private:
 public:
     /* KONSTRUKTORY */
     Matrix();
+    Matrix(int rows, int cols = 0);
     Matrix(int rows, int cols, vector<vector<double> > matrix = {{1, 1}, {1, 1}});
 
     /* Getters and setters */
@@ -26,6 +27,8 @@ public:
 
     /* METODY */
     void loadMatrix();
+    void loadSquareMatrix();
+    void loadGaussianEliminationMatrix();
     void printMatrix();
 };
 
